@@ -12,7 +12,8 @@ void UART0_init(void){
 	
 	// RXEN0 : UART0로 부터 수신이 가능하도록 설정
 	// TXEN0 : UART0로 부터 송신이 가능하도록 설정
-	// RXCIEN0 : UART0로 부터 1byte가 들어오면(stopbit까지 수신완료된 상황)이면, rx 인터럽트를 발생시킨다.
+	// RXCIEN0 : UART0로 부터 1byte가 들어오면(stopbit까지 수신완료된 상황)이면,
+	// rx 인터럽트(수신 UART0인터럽트)를 발생시킨다.
 	UCSR0B |= 1 << RXEN0 | 1 << TXEN0 | 1 << RXCIE0;
 	// shift연산자가 5번 우선순위고, |가 우선순위가 10번이므로 ()치지마라.
 	
